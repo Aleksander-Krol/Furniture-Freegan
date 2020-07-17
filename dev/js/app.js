@@ -1,9 +1,11 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import {AddItem} from "./AddItem";
-import firebase from "firebase";
-// import firebase from 'firebase/app';
+// import firebase from "firebase";
+import * as firebase from "firebase/app"
+import 'firebase/firebase-database';
 // import firebase from 'firebase/auth';
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyBfK-sd_jo1kRHzGy0lmCQbEpO_LtKbjhU",
@@ -17,5 +19,5 @@ const firebaseConfig = {
   };
 firebase.initializeApp(firebaseConfig);
 
-const App = () => <AddItem/>
+const App = () => <AddItem firebase={firebase}/>
 ReactDOM.render(<App/>, document.getElementById("app"));
